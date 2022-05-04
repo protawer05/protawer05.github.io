@@ -1,11 +1,14 @@
 import {lessons, times} from '../../lessonsList';
+import useTime from '../../../hooks/useTime';
 import './timetablePage.css';
 const TimetablePage = () => {
-    const renderItems = (arr, title, day) => {
+    const {dayNow, hours, minutes, seconds} = useTime();
+
+    const renderItems = (arr, title, day, dayNow) => {
         const array = arr[day];
         return(
             <div className="timetable__item item">
-                <div className="item__title">{title}</div>
+                <div className="item__title" style={day === dayNow ? {'color': 'red'} : null}>{title}</div>
                 <div className="item__column">
                     <ul className="column__list">
                         {array.map((item, i) => {
@@ -18,18 +21,20 @@ const TimetablePage = () => {
             </div>
         )
     }
+
+
     return(
         <div className="timetable-wrapper">
             <h1 className="timetable__title">Расписание 10A класса</h1>
             <div className="lesson">Идёт урок</div>
             <div className="timetable__content">
                 <div className="timetable__container">
-                    {renderItems(times, 'Звонки', 'all')}
-                    {renderItems(lessons, 'Понедельник', 'monday')}
-                    {renderItems(lessons, 'Вторник', 'tuesday')}
-                    {renderItems(lessons, 'Среда', 'wednesday')}
-                    {renderItems(lessons, 'Четверг', 'thursday')}
-                    {renderItems(lessons, 'Пятница', 'friday')}
+                    {renderItems(times, 'Звонки', 'all', dayNow)}
+                    {renderItems(lessons, 'Понедельник', 'monday', dayNow)}
+                    {renderItems(lessons, 'Вторник', 'tuesday', dayNow)}
+                    {renderItems(lessons, 'Среда', 'wednesday', dayNow)}
+                    {renderItems(lessons, 'Четверг', 'thursday', dayNow)}
+                    {renderItems(lessons, 'Пятница', 'friday', dayNow)}
                 </div>
             </div>
         </div>
