@@ -2,6 +2,9 @@
     max-width: 822px;
     margin: 0 auto;
 }
+.lesson{
+    display: none;
+}
 .timetable__title{
     font-family: 'Open Sans';
     font-size: 48px;
