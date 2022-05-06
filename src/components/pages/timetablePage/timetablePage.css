@@ -47,8 +47,19 @@
     color: cyan;
 }
 @media(max-width: 850px){
+    .timetable__item{
+        margin-right: 0px;
+    }
     .timetable__container{
         justify-content: center;
         grid-template-columns: 70%;
+    }
+}
+@media(max-width: 479px){
+    .timetable__container{
+        grid-template-columns: 90%;
+    }
+    .timetable__item{
+        padding-top: 30px;
     }
 }
