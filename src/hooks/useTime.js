@@ -20,9 +20,9 @@ const useTime = () => {
     const hours = time.getHours();
     const minutes = time.getMinutes();
     const seconds = time.getSeconds();
-    const dayNow = parseDay(dayNumber)
-
-    return {dayNow, hours, minutes, seconds}
+    const dayNow = parseDay(dayNumber);
+    const totalTime = hours * 3600 + minutes * 60 + seconds;
+    return {dayNow, hours, minutes, seconds, totalTime}
 }
 
 export default useTime;

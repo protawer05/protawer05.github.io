@@ -43,7 +43,7 @@ const lessons = {
     ]
 }
 const times = {
-    all: [
+    times: [
         '8.00-8.40',
         '8.45-9.25',
         '9.40-10.20',
@@ -53,6 +53,15 @@ const times = {
         '13.00-13.40'
     ]
 }
+const lessonEndTime = [
+    8 * 3600 + 40 * 60,
+    9 * 3600 + 25 * 60,
+    10 * 3600 + 20 * 60,
+    11 * 3600 + 10 * 60,
+    12 * 3600 + 0,
+    12 * 3600 + 50 * 60,
+    13 * 3600 + 40 * 60
+]
 
 
-export {lessons, times};
+export {lessons, times, lessonEndTime};

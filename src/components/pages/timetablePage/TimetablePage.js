@@ -1,8 +1,9 @@
-import {lessons, times} from '../../lessonsList';
+import {lessons, times, lessonEndTime} from '../../lessonsList';
 import useTime from '../../../hooks/useTime';
 import './timetablePage.css';
 const TimetablePage = () => {
-    const {dayNow, hours, minutes, seconds} = useTime();
+    const {dayNow, hours, minutes, seconds, totalTime} = useTime();
+   
 
     const renderItems = (arr, title, day, dayNow) => {
         const array = arr[day];
@@ -13,7 +14,7 @@ const TimetablePage = () => {
                     <ul className="column__list">
                         {array.map((item, i) => {
                             return (
-                                <li key={i} className="list__item monday">{i + 1}. {item}</li>
+                                <li key={i} className="list__item" style={(totalTime <= lessonEndTime[i] && lessonEndTime[i] - totalTime < 2400) && (day === dayNow || day === 'times') ? {color: 'red'} : {color: '#fff'}}>{i + 1}. {item}</li>
                             )
                         })}
                     </ul>
@@ -29,7 +30,7 @@ const TimetablePage = () => {
             <div className="lesson">Идёт урок</div>
             <div className="timetable__content">
                 <div className="timetable__container">
-                    {renderItems(times, 'Звонки', 'all', dayNow)}
+                    {renderItems(times, 'Звонки', 'times', dayNow)}
                     {renderItems(lessons, 'Понедельник', 'monday', dayNow)}
                     {renderItems(lessons, 'Вторник', 'tuesday', dayNow)}
                     {renderItems(lessons, 'Среда', 'wednesday', dayNow)}
