@@ -1,6 +1,6 @@
 import {lessons, times, lessonEndTime} from '../../lessonsList';
 import useTime from '../../../hooks/useTime';
-import { useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import './timetablePage.css';
 const TimetablePage = () => {
     const {dayNow, hours, minutes, seconds, totalTime} = useTime();
@@ -8,8 +8,8 @@ const TimetablePage = () => {
 
     useEffect(() => {
         setTimeout(() => setRefreshComponent(totalTime + 1), 1000)
-    })
-    
+    }, [refreshComponent])
+
     const renderItems = (arr, title, day, dayNow) => {
         const array = arr[day];
         return(

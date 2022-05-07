@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../resources/logo.svg';
 import burgerMenuOpen from '../../resources/burger-menu.svg';
 import burgerMenuClose from '../../resources/closeButton.svg';
+import Timer from './Timer';
 import './appHeader.css';
 
 const AppHeader = () => {
@@ -34,7 +35,7 @@ const AppHeader = () => {
                 <a href="#/" className="header__logo">
                     <img src={logo} alt="logo"/>
                 </a>
-                <div className="header__timer">Тут должен быть таймер</div>
+                <Timer deadLine="2022-06-02"/>
                 <div className="header__menu menu">
                     <div onClick={openAndCloseBurger} className="menu__button">
                         <img src={burgerMenuOpen} alt="burgerOpen" className="burger__open"/>
