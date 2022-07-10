@@ -23,11 +23,11 @@ const Timer = ({deadLine}) => {
         }
     }
     
-    const birthday = getTimeRemaining(deadLine)
-    const days = getZero(birthday.days);
-    const hours = getZero(birthday.hours);
-    const minutes = getZero(birthday.minutes);
-    const seconds = getZero(birthday.seconds);
+    const eventTime = getTimeRemaining(deadLine)
+    const days = getZero(eventTime.days);
+    const hours = getZero(eventTime.hours);
+    const minutes = getZero(eventTime.minutes);
+    const seconds = getZero(eventTime.seconds);
 
     const [refreshTimer, setRefreshTimer] = useState(seconds);
     
@@ -43,7 +43,7 @@ const Timer = ({deadLine}) => {
                 <div className="timer__text_day">Минуты/</div>
                 <div className="timer__text_day">Секунды</div>
             </div>
-            <div className="timer__count">{`${days} : ${hours} : ${minutes} : ${    seconds}`}</div>
+            <div className="timer__count">{`${days} : ${hours} : ${minutes} : ${seconds}`}</div>
         </div>
     )
 }

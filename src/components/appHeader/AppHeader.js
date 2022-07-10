@@ -35,7 +35,6 @@ const AppHeader = () => {
                 <a href="#/" className="header__logo">
                     <img src={logo} alt="logo"/>
                 </a>
-                <Timer deadLine="2022-06-02"/>
                 <div className="header__menu menu">
                     <div onClick={openAndCloseBurger} className="menu__button">
                         <img src={burgerMenuOpen} alt="burgerOpen" className="burger__open"/>

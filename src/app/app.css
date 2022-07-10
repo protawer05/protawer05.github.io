@@ -16,3 +16,8 @@
         background-position: top;
     }
 }
+@media(max-width: 479px){
+    .background-img{
+        background-position: 55% 0%;
+    }
+}
