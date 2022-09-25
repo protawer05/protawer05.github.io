@@ -1,0 +1,16 @@
+.lessons__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 0fr);
+  grid-column-gap: 86px;
+  grid-row-gap: 28px;
+}
+.lesson__item_title {
+  font-family: 'Lora';
+  font-weight: 400;
+  font-size: 21px;
+  text-align: center;
+}
+.item__list {
+  list-style-type: none;
+}

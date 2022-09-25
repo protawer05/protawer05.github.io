@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Header from './components/Header/Header';
+import LessonsPage from './components/Pages/LessonsPage/LessonsPage';
+import HomeworkPage from './components/Pages/HomeworkPage/HomeworkPage';
+import HomeworkAddPage from './components/Pages/HomeworkAddPage/HomeworkAddPage';
+import NotFoundPage from './components/Pages/NotFoundPage/NotFoundPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="wrapper">
+        <Header />
+        <main className="main">
+          <Routes>
+            <Route path="/" element={<LessonsPage />} />
+            <Route path="homework" element={<HomeworkPage />} />
+            <Route path="homeworkAdd" element={<HomeworkAddPage />} />
+            <Route path="/*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 
