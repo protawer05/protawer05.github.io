@@ -12,24 +12,34 @@ const LessonsPage = () => {
 
   const renderItems = (arr, title, day, dayNow) => {
     const array = arr[day];
+    let inlineStyleTitle;
+    if (day === dayNow){
+        inlineStyleTitle = { color: 'red' }
+      } else if (day === 'times'){
+        inlineStyleTitle = {color: 'blue'}
+    }
+    else {
+        inlineStyleTitle = null
+      }
     return (
       <div className={s.lesson__item}>
-        <div className={s.lesson__item_title} style={day === dayNow ? { color: 'red' } : null}>
+        <div className={s.lesson__item_title} style={inlineStyleTitle} >
           {title}
         </div>
         <div className={s.item__column}>
           <ul className={s.item__list}>
             {array.map((item, i) => {
+                const inlineStyle = totalTime <= lessonEndTime[i] &&
+                lessonEndTime[i] - totalTime < 2400 &&
+                (day === dayNow || day === 'times')
+                    ? { color: 'red' }
+                    : { color: '#000' }
               return (
                 <li
                   key={i}
                   className={s.list__item}
                   style={
-                    totalTime <= lessonEndTime[i] &&
-                    lessonEndTime[i] - totalTime < 2400 &&
-                    (day === dayNow || day === 'times')
-                      ? { color: 'red' }
-                      : { color: '#fff' }
+                    inlineStyle
                   }>
                   {i + 1}. {item}
                 </li>

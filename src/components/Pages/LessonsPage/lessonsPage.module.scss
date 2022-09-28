@@ -6,11 +6,49 @@
   grid-row-gap: 28px;
 }
 .lesson__item_title {
-  font-family: 'Lora';
+  font-family: 'Lora', serif;
   font-weight: 400;
-  font-size: 21px;
+  font-size: 30px;
   text-align: center;
+  border-bottom: 2px solid gray;
+  padding-bottom: 8px;
+
 }
 .item__list {
   list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+.lesson__item{
+  background-color: gainsboro;
+  padding: 15px 30px;
+  border-radius: 2%;
+
+}
+.list__item{
+  color: #000000;
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  font-size: 22px;
+}
+.list__item:not(:last-child){
+  margin-bottom: 5px;
+}
+
+@media(max-width: 1013px){
+  .lessons__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media(max-width: 655px){
+  .lessons__content {
+    grid-template-columns: repeat(1, 400px);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+@media(max-width: 456px){
+  .lessons__content {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
