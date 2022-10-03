@@ -17,8 +17,7 @@ const LessonsPage = () => {
         inlineStyleTitle = { color: 'red' }
       } else if (day === 'times'){
         inlineStyleTitle = {color: 'blue'}
-    }
-    else {
+    } else {
         inlineStyleTitle = null
       }
     return (
