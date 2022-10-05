@@ -40,10 +40,20 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+@media(max-width: 710px) {
+  .lesson__item{
+    margin: 0px 10px 0px 10px;
+  }
+}
 @media(max-width: 655px){
   .lessons__content {
-    grid-template-columns: repeat(1, 400px);
-    grid-template-rows: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .lesson__item{
+    min-width: 70%;
   }
 }
 @media(max-width: 456px){

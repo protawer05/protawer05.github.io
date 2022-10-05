@@ -13,7 +13,7 @@
   font-size: 23px;
 }
 .lessonName__input{
-  width: 230px;
+  width: 98%;
   height: 50px;
   font-size: 28px;
 }
@@ -22,7 +22,7 @@
 }
 .lessonHomework__input{
   height: 60px;
-  width: 300px;
+  width: 98%;
   font-size: 30px;
 }
 .lessonHomework{
@@ -38,4 +38,14 @@
   color: red;
   cursor: pointer;
   background-color: #3199d5;
+}
+@media(max-width: 710px){
+  .form{
+    margin: 0 50px 0 30px;
+  }
+}
+@media(max-width: 410px){
+  .form{
+    margin: 0px;
+  }
 }

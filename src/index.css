@@ -17,4 +17,10 @@ code {
 }
 .main{
   max-width: 1400px;
+
+}
+@media(max-width: 710px){
+  .main{
+    min-width: 100% ;
+  }
 }

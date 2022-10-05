@@ -3,10 +3,10 @@ import LessonsPage from './components/Pages/LessonsPage/LessonsPage';
 import HomeworkPage from './components/Pages/HomeworkPage/HomeworkPage';
 import HomeworkAddPage from './components/Pages/HomeworkAddPage/HomeworkAddPage';
 import NotFoundPage from './components/Pages/NotFoundPage/NotFoundPage';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 function App() {
   return (
-    <Router>
+      <HashRouter>
       <div className="wrapper">
         <Header />
         <main className="main">
@@ -18,7 +18,7 @@ function App() {
           </Routes>
         </main>
       </div>
-    </Router>
+      </HashRouter>
   );
 }
 

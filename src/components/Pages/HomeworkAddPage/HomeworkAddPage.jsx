@@ -1,7 +1,8 @@
 import s from './homeworkAddPage.module.scss';
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import axios from "axios";
 import {uid} from "uid";
+
 const HomeworkAddPage = () => {
   const [lessonName, setLessonName] = useState('')
   const [lessonHomework, setLessonHomework] = useState('')
@@ -13,10 +14,21 @@ const HomeworkAddPage = () => {
           id: uid()
       }
       axios.post('https://63356ac08aa85b7c5d1acafc.mockapi.io/homeworks', newObj)
-
       setLessonName('')
       setLessonHomework('')
     }
+
+    const submitOnPressEnter = (e) => {
+        if (e.key === "Enter"){
+            onSubmit()
+        }
+    }
+    useEffect(() => {
+         document.addEventListener('keydown', submitOnPressEnter)
+        return () => {
+            document.removeEventListener('keydown', submitOnPressEnter)
+        }
+    }, [lessonHomework, lessonName])
   return (
       <div className={s.container}>
         <form action="" className={s.form}>
