@@ -4,12 +4,27 @@ import axios from "axios";
 import {deleteHomework} from "../../redux/slices/homeworkSlice";
 import {useDispatch} from "react-redux";
 
-const HomeworkBlock = ({title, id, homework}) => {
+const HomeworkBlock = ({title, id, homework, levelDifficult}) => {
     const dispatch = useDispatch()
     const onClickDelete = (id) => {
         axios.delete(`https://63356ac08aa85b7c5d1acafc.mockapi.io/homeworks/${id}`)
             .then(res => console.log(res))
         dispatch(deleteHomework(id))
+    }
+    let levelStyle
+    switch (levelDifficult){
+
+        case 1: levelStyle = `green`;
+            break;
+        case 2: levelStyle = 'purple';
+            break;
+        case 3: levelStyle = 'yellow';
+            break;
+        case 4: levelStyle = 'orange';
+            break;
+        case 5: levelStyle = 'red';
+            break;
+        default: levelStyle = 'blue'
     }
     return (
         <div key={id} className={s.container}>
@@ -24,6 +39,7 @@ const HomeworkBlock = ({title, id, homework}) => {
             <div className={s.homework__bottom}>
                 <div className={s.homework__text}>{homework}</div>
             </div>
+            <div className={s.level}>Уровень сложности: <span style={{color: levelStyle}} className={s.level__number}>{levelDifficult}/5</span></div>
         </div>
     )
 }

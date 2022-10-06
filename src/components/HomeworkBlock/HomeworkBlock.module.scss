@@ -3,6 +3,9 @@
   border: 1px solid #fff;
   border-radius: 5px;
   max-height: 270px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .delete__link{
@@ -36,6 +39,14 @@
 }
 .homework__bottom{
   max-width: 300px;
+  flex: 1 0 auto;
+}
+.level{
+  border-top: 1px dashed #fff;
+  text-align: center;
+  color: blue;
+  margin-bottom: 3px;
+  flex: 0 0 auto;
 }
 @media(max-width: 710px){
   .container{
