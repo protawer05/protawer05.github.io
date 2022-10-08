@@ -15,6 +15,12 @@ const homeworkSlice = createSlice({
     name: 'homework',
     initialState,
     reducers: {
+        editHomework(state, action){
+          const editItem = state.homeworks.find(item => item.id === action.payload.id);
+          editItem.lesson = action.payload.title;
+          editItem.lessonHomework = action.payload.homework;
+          editItem.levelDifficult = action.payload.levelDifficult;
+        },
         addHomework(state, action){
             state.homeworks.push(action.payload)
         },
@@ -38,5 +44,5 @@ const homeworkSlice = createSlice({
     }
 })
 
-export const {addHomework, deleteHomework} = homeworkSlice.actions;
+export const {addHomework, deleteHomework, editHomework} = homeworkSlice.actions;
 export default homeworkSlice.reducer;

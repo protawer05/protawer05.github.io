@@ -8,7 +8,7 @@ const HomeworkAddPage = () => {
     const [lessonHomework, setLessonHomework] = useState('')
     const [levelDifficult, setLevelDifficult] = useState(1)
 
-    let selectStyle = ['green', 'purple', 'yellow', 'orange', 'red']
+    const selectStyle = ['green', 'purple', 'yellow', 'orange', 'red']
 
     const onSubmit = () => {
       const newObj = {
@@ -34,7 +34,7 @@ const HomeworkAddPage = () => {
         return () => {
             document.removeEventListener('keydown', submitOnPressEnter)
         }
-    }, [lessonHomework, lessonName])
+    }, [lessonHomework, lessonName, levelDifficult])
   return (
       <div className={s.container}>
         <form action="" className={s.form}>

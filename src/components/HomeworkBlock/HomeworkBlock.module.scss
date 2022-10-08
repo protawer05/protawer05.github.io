@@ -31,6 +31,18 @@
   flex-direction: row-reverse;
   height: 60px;
 }
+.homework__delete{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.homework__edit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
 .homework__text{
   color: red;
   word-wrap: anywhere;
