@@ -45,6 +45,7 @@ const Navbar = () => {
           <AiOutlineMenu size={25} color="white" />
         )}
       </div>
+
     </>
   );
 };
